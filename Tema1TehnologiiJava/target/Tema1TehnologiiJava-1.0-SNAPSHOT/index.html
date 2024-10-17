@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test StringToListServlet</title>
+</head>
+<body>
+    <h1>Test Servlet</h1>
+    <form action="http://localhost:8080/Tema1TehnologiiJava/stringtolist" method="post">
+        <label for="input">Enter a string:</label>
+        <input type="text" id="input" name="input" required />
+        <input type="submit" value="Submit" />
+    </form>
+    <h1>Generate Random Graph</h1>
+    <form action="http://localhost:8080/Tema1TehnologiiJava/generateGraph" method="post">
+        <label for="numVertices">Number of Vertices:</label>
+        <input type="number" id="numVertices" name="numVertices" required />
+        <br />
+        <label for="numEdges">Number of Edges:</label>
+        <input type="number" id="numEdges" name="numEdges" required />
+        <br />
+        <input type="submit" value="Generate Graph" />
+    </form>
+</body>
+</html>
