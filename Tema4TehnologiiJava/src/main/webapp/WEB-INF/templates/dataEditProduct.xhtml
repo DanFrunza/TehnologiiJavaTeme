@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="jakarta.faces.core">
+
+    <!-- Dialog pentru editarea produselor -->
+    <p:dialog header="Edit Product" widgetVar="editProductDialog" modal="true" resizable="false" width="400">
+        <h:form id="editProductForm">
+            <p:panelGrid columns="2">
+                <h:outputLabel for="name" value="Name" />
+                <h:inputText id="name" value="#{productBean.selectedProduct.name}" required="true" />
+
+                <h:outputLabel for="description" value="Description" />
+                <h:inputText id="description" value="#{productBean.selectedProduct.description}" required="true" />
+
+                <h:outputLabel for="price" value="Price" />
+                <h:inputText id="price" value="#{productBean.selectedProduct.price}" required="true" />
+
+                <h:outputLabel for="quantity" value="Quantity" />
+                <h:inputText id="quantity" value="#{productBean.selectedProduct.quantity}" required="true" />
+            </p:panelGrid>
+
+            <p:commandButton value="Save" action="#{productBean.updateProduct}" 
+                             update=":productForm :messages" 
+                             oncomplete="PF('editProductDialog').hide();" />
+            <p:commandButton value="Cancel" onclick="PF('editProductDialog').hide();" type="button" />
+        </h:form>
+    </p:dialog>
+</ui:composition>

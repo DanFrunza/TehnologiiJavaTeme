@@ -1,0 +1,30 @@
+<!-- WEB-INF/templates/dataView.xhtml -->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="jakarta.faces.core">
+
+    <h:form id="#{formId}">
+        <p:dataTable value="#{bean.items}" var="item" 
+                    paginator="true" 
+                    rows="10" 
+                    selection="#{bean.selectedItem}" 
+                    rowKey="#{item.id}">
+           <p:ajax event="rowSelect" listener="#{bean.onRowSelect}" update=":#{formId}:messages"/>
+           <p:ajax event="rowUnselect" listener="#{bean.onRowUnselect}" update=":#{formId}:messages"/>
+
+           <!-- Column Definitions from Params -->
+           <ui:repeat var="column" value="#{columns}">
+               <p:column headerText="#{column.header}" sortBy="#{item[column.field]}">
+                   <h:outputText value="#{item[column.field]}">
+                       <f:convertDateTime pattern="dd/MM/yyyy" rendered="#{column.dateField}"/>
+                       <f:convertNumber pattern="#,##0.00" rendered="#{column.numberField}"/>
+                   </h:outputText>
+               </p:column>
+           </ui:repeat>
+       </p:dataTable>
+
+        <p:messages id="messages" closable="true"/>
+    </h:form>
+</ui:composition>

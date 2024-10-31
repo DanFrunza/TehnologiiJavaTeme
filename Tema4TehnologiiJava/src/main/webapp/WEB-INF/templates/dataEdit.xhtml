@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="jakarta.faces.core">
+
+    <!-- Dialog pentru editarea datelor -->
+    <p:dialog header="Edit #{bean.entityType.simpleName}" widgetVar="editDialog" modal="true" resizable="false" width="400">
+        <h:form id="editForm">
+            <p:panelGrid columns="2" rendered="#{bean.selectedItem != null}">
+                
+                <!-- ID (read-only, hidden or displayed based on your design) -->
+                <h:outputLabel for="id" value="ID" />
+                <h:inputText id="id" value="#{bean.selectedItem.id}" readonly="true" />
+
+                <!-- Name -->
+                <h:outputLabel for="name" value="Name" />
+                <h:inputText id="name" value="#{bean.selectedItem.name}" required="true" label="Name"/>
+
+                <!-- E-mail or Description (conditionally rendered based on entity type) -->
+                <h:outputLabel for="emailOrDescription" value="#{bean.entityType == 'Client' ? 'Email' : 'Description'}" />
+                <h:inputText id="emailOrDescription" value="#{bean.entityType == 'Client' ? bean.selectedItem.email : bean.selectedItem.description}" required="true" label="Description or Email"/>
+
+                <!-- Phone (for clients) or Price (for products) -->
+                <h:outputLabel for="phoneOrPrice" value="#{bean.entityType == 'Client' ? 'Phone' : 'Price'}" />
+                <h:inputText id="phoneOrPrice" value="#{bean.entityType == 'Client' ? bean.selectedItem.phone : bean.selectedItem.price}" required="true" label="Phone or Price"/>
+
+                <!-- Date or Quantity (conditionally rendered) -->
+                <h:outputLabel for="dateOrQuantity" value="#{bean.entityType == 'Client' ? 'Registration Date' : 'Quantity'}" />
+                <h:inputText id="dateOrQuantity" value="#{bean.entityType == 'Client' ? bean.selectedItem.registrationDate : bean.selectedItem.quantity}" required="true" label="Date or Quantity"/>
+
+            </p:panelGrid>
+
+            <!-- Butoane de acțiune -->
+            <p:commandButton value="Save" action="#{bean.saveItem}" update=":dataTable :messages" oncomplete="PF('editDialog').hide();" />
+            <p:commandButton value="Cancel" onclick="PF('editDialog').hide();" type="button" />
+        </h:form>
+    </p:dialog>
+</ui:composition>

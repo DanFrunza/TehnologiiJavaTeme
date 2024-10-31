@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="jakarta.faces.core">
+    <h:form id="clientForm">
+        <p:dataTable value="#{clientBean.clients}" var="client" 
+                     paginator="true" 
+                     rows="10" 
+                     selection="#{clientBean.selectedClient}" 
+                     rowKey="#{client.id}">
+            <p:ajax event="rowSelect" listener="#{clientBean.onRowSelect}" update=":clientForm:messages"/>
+            <p:ajax event="rowUnselect" listener="#{clientBean.onRowUnselect}" update=":clientForm:messages"/>
+
+            <p:column headerText="ID" sortBy="#{client.id}">
+                <h:outputText value="#{client.id}"/>
+            </p:column>
+            <p:column headerText="Name" sortBy="#{client.name}">
+                <h:outputText value="#{client.name}"/>
+            </p:column>
+            <p:column headerText="Email" sortBy="#{client.email}">
+                <h:outputText value="#{client.email}"/>
+            </p:column>
+            <p:column headerText="Phone" sortBy="#{client.phone}">
+                <h:outputText value="#{client.phone}"/>
+            </p:column>
+            <p:column headerText="Registration Date" sortBy="#{client.registrationDate}">
+                <h:outputText value="#{client.registrationDate}" converter="customDateTimeConverter">
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                </h:outputText>
+            </p:column>
+
+            <!-- Coloană pentru editare -->
+            <p:column headerText="Actions">
+                <p:commandButton value="Edit" icon="pi pi-pencil"
+                                 actionListener="#{clientBean.setSelectedClient(client)}"
+                                 oncomplete="PF('editClientDialog').show();" 
+                                 update="@form"/>
+            </p:column>
+        </p:dataTable>
+
+        <p:messages id="messages" closable="true"/>
+    </h:form>
+</ui:composition>

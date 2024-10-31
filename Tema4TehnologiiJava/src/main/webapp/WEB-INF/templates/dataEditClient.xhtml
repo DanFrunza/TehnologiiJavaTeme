@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="jakarta.faces.core">
+
+    <!-- Dialog pentru editarea clienților -->
+    <p:dialog header="Edit Client" widgetVar="editClientDialog" modal="true" resizable="false" width="400">
+        <h:form id="editClientForm">
+            <p:panelGrid columns="2">
+                <h:outputLabel for="name" value="Name" />
+                <h:inputText id="name" value="#{clientBean.selectedClient.name}" required="true" />
+
+                <h:outputLabel for="email" value="Email" />
+                <h:inputText id="email" value="#{clientBean.selectedClient.email}" required="true" />
+
+                <h:outputLabel for="phone" value="Phone" />
+                <h:inputText id="phone" value="#{clientBean.selectedClient.phone}" required="true" />
+
+                <h:outputLabel for="registrationDate" value="Registration Date" />
+                <h:inputText id="registrationDate" value="#{clientBean.selectedClient.registrationDate}" required="true" />
+            </p:panelGrid>
+
+            <p:commandButton value="Save" action="#{clientBean.updateClient}" 
+                             update=":clientForm :messages" 
+                             oncomplete="PF('editClientDialog').hide();" />
+            <p:commandButton value="Cancel" onclick="PF('editClientDialog').hide();" type="button" />
+        </h:form>
+    </p:dialog>
+</ui:composition>
