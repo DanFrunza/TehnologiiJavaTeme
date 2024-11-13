@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Tema5TehnologiiJava2:war exploded" />
+      <artifact name="Tema6TehnologiiJava:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,7 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91b44676-44c1-47c7-88ba-9cfc0da45aa2" name="Changes" comment="lab4">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/resources/bean/AllOrdersBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/resources/bean/OrderBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tema5.1TehnologiiJava/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tema5.1TehnologiiJava/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +82,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -158,10 +160,9 @@
       <method v="2" />
     </configuration>
     <configuration name="Payara 6.18.1" type="PayaraServerConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Payara 6.18.1" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="22">
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Tema5TehnologiiJava2:war exploded">
+        <artifact name="Tema6TehnologiiJava:war exploded">
           <settings />
         </artifact>
       </deployment>
@@ -227,6 +228,7 @@
         <option name="BuildArtifacts" enabled="true">
           <artifact name="lab3:war exploded" />
           <artifact name="Tema5TehnologiiJava2:war exploded" />
+          <artifact name="Tema6TehnologiiJava:war exploded" />
         </option>
       </method>
     </configuration>
@@ -275,6 +277,7 @@
       <workItem from="1731436422243" duration="696000" />
       <workItem from="1731437222194" duration="348000" />
       <workItem from="1731504996022" duration="319000" />
+      <workItem from="1731512346927" duration="3626000" />
     </task>
     <task id="LOCAL-00001" summary="lab4">
       <option name="closed" value="true" />

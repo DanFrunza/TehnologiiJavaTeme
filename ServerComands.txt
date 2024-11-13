@@ -2,3 +2,6 @@ sudo chown -R dan:dan /opt/payara/glassfish/domains/domain1/osgi-cache/
 sudo chown -R dan:payara /opt/payara/glassfish/domains/domain1/
 sudo chmod -R u+rwx /opt/payara/glassfish/domains/domain1/
 
+
+docker run -it -p 5432:5432 --restart always -e POSTGRES_PASSWORD=password postgres
+
