@@ -1,0 +1,44 @@
+<!-- register.xhtml -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="template.xhtml">
+    <ui:define name="pageTitle">
+        Register
+    </ui:define>
+    <!-- Main Content Area -->
+    <ui:define name="content">
+        <h:form>
+            <p:panel header="Register New User" style="margin-bottom:20px;">
+                <h:messages globalOnly="true" style="color:red; margin-bottom:10px;" />
+
+                <p:panelGrid columns="2" style="margin-bottom:20px;">
+                    <p:outputLabel for="name" value="Name:" />
+                    <p:inputText id="name" value="#{userRegistrationBean.newMyUser.name}" required="true" label="Name" />
+
+                    <p:outputLabel for="password" value="Password:" />
+                    <p:password id="password" value="#{userRegistrationBean.password}" required="true" label="Password" />
+
+                    <p:outputLabel for="confirmPassword" value="Confirm Password:" />
+                    <p:password id="confirmPassword" value="#{userRegistrationBean.confirmPassword}" required="true" label="Confirm Password" />
+
+                    <p:outputLabel for="role" value="Role:" />
+                    <p:selectOneMenu id="role" value="#{userRegistrationBean.newMyUser.userType}" required="true" label="Role">
+                        <f:selectItem itemLabel="Select Role" itemValue="" noSelectionOption="true" />
+                        <f:selectItem itemLabel="Student" itemValue="STUDENT" />
+                        <f:selectItem itemLabel="Teacher" itemValue="TEACHER" />
+                        <f:selectItem itemLabel="Admin" itemValue="ADMIN" />
+                    </p:selectOneMenu>
+                </p:panelGrid>
+
+                <p:commandButton value="Register" action="#{userRegistrationBean.registerUser}" update="@form" />
+            </p:panel>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
+</html>

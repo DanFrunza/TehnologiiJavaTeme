@@ -10,7 +10,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91b44676-44c1-47c7-88ba-9cfc0da45aa2" name="Changes" comment="lab4">
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/beans/ActivityBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/beans/AuthBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/beans/InterceptBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/beans/Logged.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/beans/MyQualifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/beans/RegistrationNumberBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/beans/SubmissionBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/beans/SubmissionListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/beans/UserBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/beans/UserRegistrationBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/models/Activity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/models/MyUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/models/Submission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/java/domain1/tema7tehnologiijava/models/SubmissionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/webapp/index.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/webapp/login.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/webapp/manageActivities.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/webapp/register.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/webapp/submitEvaluation.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/webapp/template.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/webapp/userView.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema7TehnologiiJava/src/main/webapp/viewEvaluations.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tema6TehnologiiJava/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tema6TehnologiiJava/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,32 +81,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.ProductDAOTest.executor": "Run",
-    "JUnit.ProductDAOTest.testGetAllProducts.executor": "Run",
-    "Maven.lab3 [clean].executor": "Run",
-    "Maven.lab3 [test].executor": "Run",
-    "Maven.lab3 [verify].executor": "Run",
-    "Payara Micro.lab3.executor": "Run",
-    "Payara Server.Payara 6.18.1.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/dan/Documents/Tedy_proiect/Tedy-Proiect-JavaEJB/lab3",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.ProductDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductDAOTest.testGetAllProducts.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.lab3 [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.lab3 [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.lab3 [verify].executor&quot;: &quot;Run&quot;,
+    &quot;Payara Micro.lab3.executor&quot;: &quot;Run&quot;,
+    &quot;Payara Server.Payara 6.18.1.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/dan/Documents/Tedy_proiect/Tedy-Proiect-Java-Lab7/lab7&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp" />
@@ -231,8 +254,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ProductDAOTest.testGetAllProducts" />
       <item itemvalue="JUnit.ProductDAOTest" />
+      <item itemvalue="JUnit.ProductDAOTest.testGetAllProducts" />
       <item itemvalue="Payara Micro.lab3" />
       <item itemvalue="Payara Server.Payara 6.18.1" />
     </list>
@@ -275,6 +298,14 @@
       <workItem from="1731436422243" duration="696000" />
       <workItem from="1731437222194" duration="348000" />
       <workItem from="1731504996022" duration="319000" />
+      <workItem from="1731532266494" duration="466000" />
+      <workItem from="1731533595474" duration="633000" />
+      <workItem from="1731564215266" duration="700000" />
+      <workItem from="1731567361655" duration="2246000" />
+      <workItem from="1732194375177" duration="92000" />
+      <workItem from="1732349137779" duration="118000" />
+      <workItem from="1732611944433" duration="19000" />
+      <workItem from="1732774444919" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="lab4">
       <option name="closed" value="true" />

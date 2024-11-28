@@ -1,0 +1,83 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="template.xhtml">
+    <ui:define name="content">
+        <p:panel header="Manage Activities" style="margin-bottom: 20px;">
+            <h:messages globalOnly="true" style="color:red; margin-bottom:10px;" />
+            <h:form id="activityForm">
+                <!-- Add New Activity -->
+                <p:panelGrid columns="2" style="margin-bottom:20px;">
+                    <p:outputLabel for="activityName" value="Activity Name:" />
+                    <p:inputText id="activityName" value="#{activityBean.newActivity.name}" required="true" />
+
+                    <p:outputLabel for="startDate" value="Start Date:" />
+                    <p:datePicker id="startDate" value="#{activityBean.newActivity.startDate}" pattern="yyyy-MM-dd" required="true" />
+
+                    <p:outputLabel for="endDate" value="End Date:" />
+                    <p:datePicker id="endDate" value="#{activityBean.newActivity.endDate}" pattern="yyyy-MM-dd" required="true" />
+                </p:panelGrid>
+
+                <p:commandButton value="Add Activity" action="#{activityBean.addActivity}" update="activityTable, activityForm" />
+            </h:form>
+
+            <!-- Existing Activities Table -->
+            <p:dataTable id="activityTable" value="#{activityBean.activities}" var="activity" paginator="true" rows="10"
+                         style="margin-top:20px;" editable="true">
+                <p:column headerText="Activity Name">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{activity.name}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{activity.name}" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Start Date">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{activity.startDate}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:datePicker value="#{activity.startDate}" pattern="yyyy-MM-dd" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="End Date">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{activity.endDate}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:datePicker value="#{activity.endDate}" pattern="yyyy-MM-dd" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Teacher">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{activity.teacher.name}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:selectOneMenu value="#{activity.teacher}">
+                                <f:selectItems value="#{activityBean.teachers}" var="teacher"
+                                               itemLabel="#{teacher.name}" itemValue="#{teacher}" />
+                            </p:selectOneMenu>
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Actions">
+                    <p:commandButton value="Delete" action="#{activityBean.deleteActivity(activity.id)}" update="activityTable"
+                                     icon="pi pi-trash" />
+                </p:column>
+            </p:dataTable>
+        </p:panel>
+    </ui:define>
+</ui:composition>

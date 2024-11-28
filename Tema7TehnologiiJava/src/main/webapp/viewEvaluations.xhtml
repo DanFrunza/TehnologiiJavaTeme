@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="template.xhtml">
+    <ui:define name="content">
+        <h:form>
+            <p:panel header="View Evaluations">
+                <!-- Role-based message -->
+                <h:outputText value="You can view evaluations based on your role." />
+
+                <!-- Evaluations Table -->
+                <p:dataTable id="evaluationTable" value="#{submissionBean.evaluations}" var="evaluation"
+                             paginator="true" rows="10" styleClass="evaluationTable">
+                    <p:column headerText="Registration Number">
+                        <h:outputText value="#{evaluation.registrationNumber}" />
+                    </p:column>
+
+                    <p:column headerText="Activity">
+                        <h:outputText value="#{evaluation.activity.name}" />
+                    </p:column>
+
+                    <p:column headerText="Type">
+                        <h:outputText value="#{evaluation.submissionType}" />
+                    </p:column>
+
+                    <p:column headerText="Grade">
+                        <h:outputText value="#{evaluation.grade}" />
+                    </p:column>
+
+                    <p:column headerText="Comment">
+                        <h:outputText value="#{evaluation.comment}" />
+                    </p:column>
+
+                    <p:column headerText="Submitted By">
+                        <h:outputText value="#{evaluation.user.name}" />
+                    </p:column>
+
+                    <p:column headerText="Date Submitted">
+                        <h:outputText value="#{evaluation.createdAt}" />
+                    </p:column>
+                </p:dataTable>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>

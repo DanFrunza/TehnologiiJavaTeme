@@ -1,0 +1,29 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="template.xhtml">
+    <ui:define name="content">
+        <h:form>
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Activity" />
+                <p:selectOneMenu value="#{submissionBean.activityId}">
+                    <f:selectItems value="#{submissionBean.activities}" var="activity"
+                                   itemLabel="#{activity.name}" itemValue="#{activity.id}" />
+                </p:selectOneMenu>
+                <p:outputLabel value="Type" />
+                <p:importEnum type="domain1.tema7tehnologiijava.models.SubmissionType" var="SubmissionType" />
+                <p:selectOneMenu value="#{submissionBean.submission.submissionType}">
+                    <f:selectItem itemLabel="Course" itemValue="#{SubmissionType.COURSE}" />
+                    <f:selectItem itemLabel="Laboratory" itemValue="#{SubmissionType.LABORATORY}" />
+                </p:selectOneMenu>
+                <p:outputLabel value="Grade" />
+                <p:inputNumber value="#{submissionBean.submission.grade}" minValue="1" maxValue="10" />
+                <p:outputLabel value="Comment" />
+                <p:inputTextarea value="#{submissionBean.submission.comment}" />
+            </p:panelGrid>
+            <p:commandButton value="Submit" action="#{submissionBean.submit}" />
+        </h:form>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,26 @@
+<!-- login.xhtml -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="template.xhtml">
+    <ui:define name="pageTitle">
+        Login
+    </ui:define>
+    <!-- Main Content Area -->
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Username" />
+                <h:inputText value="#{authBean.username}" />
+                <h:outputLabel value="Password" />
+                <h:inputSecret value="#{authBean.password}" />
+            </h:panelGrid>
+            <p:commandButton value="Login" action="#{authBean.login}" />
+        </h:form>
+    </ui:define>
+
+</ui:composition>
+</html>
