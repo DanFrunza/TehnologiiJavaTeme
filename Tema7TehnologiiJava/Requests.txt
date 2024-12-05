@@ -1,0 +1,31 @@
+curl -X GET http://localhost:8080/Tema7TehnologiiJava-1.0-SNAPSHOT/api/submissions
+curl -X GET http://localhost:8080/Tema7TehnologiiJava-1.0-SNAPSHOT/api/submissions/1
+
+
+curl -X POST http://localhost:8080/Tema7TehnologiiJava-1.0-SNAPSHOT/api/submissions \
+     -H "Content-Type: application/json" \
+     -d '{
+           "submissionType": "COURSE",
+           "grade": 9,
+           "comment": "Great work!",
+           "createdAt": "2024-12-04T10:00:00",
+           "registrationNumber": "12345",
+           "activity": { "id": 253 },
+           "myUser": { "id": 10 }
+         }'
+
+
+curl -X DELETE http://localhost:8080/Tema7TehnologiiJava-1.0-SNAPSHOT/api/submissions/11
+
+
+curl -X PUT http://localhost:8080/Tema7TehnologiiJava-1.0-SNAPSHOT/api/submissions/1 \
+     -H "Content-Type: application/json" \
+     -d '{
+           "submissionType": "EXAM",
+           "grade": 8,
+           "comment": "Updated comment",
+           "createdAt": "2024-12-04T10:00:00",
+           "registrationNumber": "12345",
+           "activity": { "id": 1 },
+           "myUser": { "id": 2 }
+         }'

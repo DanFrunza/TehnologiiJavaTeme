@@ -1,6 +1,5 @@
 package domain1.tema7tehnologiijava.beans;
 
-
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.enterprise.inject.Any;
 import jakarta.faces.application.FacesMessage;
