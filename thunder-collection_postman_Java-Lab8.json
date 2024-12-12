@@ -1,0 +1,168 @@
+{
+    "info": {
+        "_postman_id": "763969fc-ec14-401f-8f82-bc3741cd762f",
+        "name": "Java-Lab8",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Login",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8080/lab7-1.0-SNAPSHOT/api/submissions/login",
+                    "query": [
+                        {
+                            "key": "user",
+                            "value": "user",
+                            "disabled": true
+                        },
+                        {
+                            "key": "password",
+                            "value": "user",
+                            "disabled": true
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "lab7-1.0-SNAPSHOT",
+                        "api",
+                        "submissions",
+                        "login"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"user\": \"user\",\n  \"password\": \"user\"\n}"
+                }
+            }
+        },
+        {
+            "name": "List Submissions",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/lab7-1.0-SNAPSHOT/api/submissions/",
+                    "path": [
+                        "lab7-1.0-SNAPSHOT",
+                        "api",
+                        "submissions"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                }
+            }
+        },
+        {
+            "name": "Create Submission",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8080/lab7-1.0-SNAPSHOT/api/submissions",
+                    "path": [
+                        "lab7-1.0-SNAPSHOT",
+                        "api",
+                        "submissions"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"activity\": 3,\n  \"grade\": 7,\n  \"comment\": \"assad\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Get Submission",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/lab7-1.0-SNAPSHOT/api/submissions/3",
+                    "path": [
+                        "lab7-1.0-SNAPSHOT",
+                        "api",
+                        "submissions",
+                        "3"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                }
+            }
+        },
+        {
+            "name": "Delete Submission",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:8080/lab7-1.0-SNAPSHOT/api/submissions/4",
+                    "path": [
+                        "lab7-1.0-SNAPSHOT",
+                        "api",
+                        "submissions",
+                        "4"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                }
+            }
+        },
+        {
+            "name": "Patch Submission",
+            "request": {
+                "method": "PATCH",
+                "url": {
+                    "raw": "http://localhost:8080/lab7-1.0-SNAPSHOT/api/submissions/3/",
+                    "path": [
+                        "lab7-1.0-SNAPSHOT",
+                        "api",
+                        "submissions",
+                        "3"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"comment\": \"Asdsasdassd\"\n}"
+                }
+            }
+        }
+    ]
+}

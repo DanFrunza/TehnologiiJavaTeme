@@ -21,19 +21,19 @@
                     <p:menuitem value="Home" url="index.xhtml" icon="pi pi-home"/>
                     <p:menuitem value="Logout" action="#{authBean.logout}" rendered="#{authBean.currentMyUser != null}" />
                     <p:submenu label="Login/Register" rendered="#{authBean.currentMyUser == null}">
-                        <p:menuitem value="Login" url="login.xhtml"/>
-                        <p:menuitem value="Register" url="register.xhtml"/>
+                        <p:menuitem value="Login" url="faces/login.xhtml"/>
+                        <p:menuitem value="Register" url="faces/register.xhtml"/>
 
 
 
                     </p:submenu>
                     <p:submenu label="View">
-                        <p:menuitem value="Users" url="userView.xhtml"/>
-                        <p:menuitem value="Submissions" url="viewEvaluations.xhtml"/>
-                        <p:menuitem value="Activities" url="manageActivities.xhtml"/>
+                        <p:menuitem value="Users" url="faces/userView.xhtml"/>
+                        <p:menuitem value="Submissions" url="faces/viewEvaluations.xhtml"/>
+                        <p:menuitem value="Activities" url="faces/manageActivities.xhtml"/>
                     </p:submenu>
                     <p:submenu label="Evaluations">
-                        <p:menuitem value="Evaluate" url="submitEvaluation.xhtml"/>
+                        <p:menuitem value="Evaluate" url="faces/submitEvaluation.xhtml"/>
                         <p:menuitem value="#" url="#"/>
                     </p:submenu>
                 </p:menubar>

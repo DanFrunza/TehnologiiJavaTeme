@@ -13,7 +13,7 @@ public class Submission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne(cascade =  CascadeType.PERSIST)
+    @ManyToOne
     private Activity activity;
 
     @ManyToOne

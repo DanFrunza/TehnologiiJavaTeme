@@ -1,0 +1,112 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Java-Lab8",
+    "collectionId": "5790ef12-7e09-40c1-add0-9f986045f195",
+    "dateExported": "2024-12-09T11:39:22.092Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "823cd261-d939-43cf-869e-ad1226a13ef2",
+            "colId": "5790ef12-7e09-40c1-add0-9f986045f195",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://localhost:8080/lab7-1.0-SNAPSHOT/api/submissions/login",
+            "method": "POST",
+            "sortNum": 5000,
+            "created": "2024-12-04T15:05:19.236Z",
+            "modified": "2024-12-04T15:05:19.236Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "user",
+                    "value": "user",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "password",
+                    "value": "user",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"user\": \"user\",\n  \"password\": \"user\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "88f8d9eb-759b-4eba-a396-dae5623e0ee2",
+            "colId": "5790ef12-7e09-40c1-add0-9f986045f195",
+            "containerId": "",
+            "name": "List Submissions",
+            "url": "http://localhost:8080/lab7-1.0-SNAPSHOT/api/submissions/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-12-04T14:58:19.437Z",
+            "modified": "2024-12-04T15:35:22.226Z",
+            "headers": []
+        },
+        {
+            "_id": "3f1e255e-895f-4406-ad2d-fe1f0af6c793",
+            "colId": "5790ef12-7e09-40c1-add0-9f986045f195",
+            "containerId": "",
+            "name": "Create Submission",
+            "url": "http://localhost:8080/lab7-1.0-SNAPSHOT/api/submissions",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-12-04T15:23:11.440Z",
+            "modified": "2024-12-05T06:07:54.212Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"activity\": 3,\n  \"grade\": 7,\n  \"comment\": \"assad\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "41c68365-a640-4d38-be10-01bf400118d2",
+            "colId": "5790ef12-7e09-40c1-add0-9f986045f195",
+            "containerId": "",
+            "name": "Get Submission",
+            "url": "http://localhost:8080/lab7-1.0-SNAPSHOT/api/submissions/3",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-12-04T15:25:03.710Z",
+            "modified": "2024-12-04T15:36:50.908Z",
+            "headers": []
+        },
+        {
+            "_id": "ac66abe9-3734-462b-ae95-6e883e8d1deb",
+            "colId": "5790ef12-7e09-40c1-add0-9f986045f195",
+            "containerId": "",
+            "name": "Delete Submission",
+            "url": "http://localhost:8080/lab7-1.0-SNAPSHOT/api/submissions/4",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-12-04T15:34:17.324Z",
+            "modified": "2024-12-04T15:34:17.324Z",
+            "headers": []
+        },
+        {
+            "_id": "a8e40c66-bd64-48b4-802c-c430ce5523df",
+            "colId": "5790ef12-7e09-40c1-add0-9f986045f195",
+            "containerId": "",
+            "name": "Patch Submission",
+            "url": "http://localhost:8080/lab7-1.0-SNAPSHOT/api/submissions/3/",
+            "method": "PATCH",
+            "sortNum": 60000,
+            "created": "2024-12-04T15:40:12.448Z",
+            "modified": "2024-12-04T15:40:12.448Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"comment\": \"Asdsasdassd\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "voSMIM8HiiT06c6yns4fq0ru-jUEZnbymZ02w5N1zqGnaJA4E2T4XHdZSXwAcnHGuJELCVP2RdEKgV-mQQoCUw"
+}
