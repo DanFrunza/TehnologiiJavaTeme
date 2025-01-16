@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="template.xhtml">
+    <ui:define name="pageTitle">
+        Programări Admin
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form>
+
+            <h2>Admin - Vizualizare Programări</h2>
+
+            <!-- Calendar interactiv pentru selectarea zilei -->
+            <h:panelGrid columns="2">
+                <p:outputLabel for="calendar" value="Selectați ziua:" />
+                <p:calendar id="calendar" value="#{adminProgramariBean.dataSelectata}" pattern="dd/MM/yyyy" showButtonPanel="true" />
+
+                <!-- Buton pentru a verifica programările -->
+                <p:commandButton value="Vezi programările" action="#{adminProgramariBean.veziProgramari}" update="programariTable" ajax="true" />
+            </h:panelGrid>
+
+            <p:dataTable id="programariTable" value="#{adminProgramariBean.programari}" var="programare" border="1">
+                <p:column headerText="ID">
+                    <h:outputText value="#{programare.id}" />
+                </p:column>
+                <p:column headerText="Student">
+                    <h:outputText value="#{programare.student.nume}" />
+                </p:column>
+                <p:column headerText="Data Programării">
+                    <h:outputText value="#{programare.dataProgramare.toLocalDate()} #{programare.dataProgramare.toLocalTime()}" />
+                </p:column>
+                <p:column headerText="Status">
+                    <h:outputText value="#{programare.status}" />
+                </p:column>
+                <p:column headerText="Acțiuni">
+                    <p:commandButton value="Anulează"
+                                     action="#{adminProgramariBean.anuleazaProgramare(programare)}"
+                                     update="programariTable"
+                                     ajax="true" />
+
+                    <!-- Buton pentru a seta programarea ca Expirată -->
+                    <p:commandButton value="Setează Expirată"
+                                     action="#{adminProgramariBean.seteazaExpirata(programare)}"
+                                     update="programariTable"
+                                     ajax="true" />
+
+                    <!-- Buton pentru a activa programarea -->
+                    <p:commandButton value="Activează"
+                                     action="#{adminProgramariBean.activeazaProgramare(programare)}"
+                                     update="programariTable"
+                                     ajax="true" />
+                </p:column>
+            </p:dataTable>
+
+
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

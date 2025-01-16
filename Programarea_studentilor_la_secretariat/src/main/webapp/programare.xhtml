@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="template.xhtml">
+    <ui:define name="pageTitle">
+        Programare - Student
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form>
+
+            <h2>Programare la secretariat</h2>
+
+            <!-- Calendar interactiv pentru selectarea zilei -->
+            <h:panelGrid columns="2">
+                <p:outputLabel for="calendar" value="Selectați ziua:" />
+                <p:calendar id="calendar" value="#{programariBean.dataSelectata}" pattern="dd/MM/yyyy" showButtonPanel="true" />
+
+                <!-- Buton pentru a verifica orele disponibile -->
+                <p:commandButton value="Vezi orele disponibile" action="#{programariBean.verificaOre}" update="oreDisponibile" ajax="true" />
+            </h:panelGrid>
+
+            <!-- Panou cu orele ocupate și disponibile -->
+            <p:panel header="Ore disponibile" id="oreDisponibile">
+                <h:outputText value="Ore libere: #{programariBean.oreLibere}" />
+                <h:outputText value="Ore ocupate: #{programariBean.oreOcupate}" />
+            </p:panel>
+
+            <!-- Selectăm ora și minutul -->
+            <h:panelGrid columns="2">
+                <p:outputLabel for="oraInput" value="Ora:" />
+                <p:spinner id="oraInput" value="#{programariBean.oraSelectataHour}" min="10" max="13" step="1" onchange="PF('oraInput').select();" />
+
+                <p:outputLabel for="minuteInput" value="Minute:" />
+                <p:spinner id="minuteInput" value="#{programariBean.oraSelectataMinute}" min="0" max="45" step="15" onchange="PF('minuteInput').select();" />
+            </h:panelGrid>
+            <p:outputLabel value="Minutele trebuie să fie multipli de 15: 00, 15, 30, 45." style="color: red;" />
+            <!-- Butonul pentru a face programarea -->
+            <h:commandButton value="Programează-te" action="#{programariBean.programeaza}" ajax="true" />
+
+
+            <!-- Lista programărilor curente -->
+            <h:panelGroup>
+                <h2>Programările tale</h2>
+
+
+                <!-- Tabel care afișează programările studentului logat -->
+                <p:dataTable id="programariTable" value="#{programariBean.programarileStudentului}" var="programare" border="1">
+                    <p:column headerText="Data">
+                        <h:outputText value="#{programare.dataProgramare.toLocalDate()}"/>
+                    </p:column>
+                    <p:column headerText="Ora">
+                        <h:outputText value="#{programare.dataProgramare.toLocalTime()}"/>
+                    </p:column>
+                    <p:column headerText="Status">
+                        <h:outputText value="#{programare.status}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:panelGroup>
+
+
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

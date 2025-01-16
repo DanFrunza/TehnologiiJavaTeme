@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="template.xhtml">
+    <ui:define name="pageTitle">
+        Programări Admin - Căutare Student
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form>
+
+            <h2>Admin - Vizualizare Programări pentru Student</h2>
+
+            <!-- Form pentru a căuta un student după nume și prenume -->
+            <h:panelGrid columns="2">
+                <p:outputLabel for="nume" value="Nume Student:" />
+                <p:inputText id="nume" value="#{adminProgramariStudentBean.numeStudent}" />
+
+                <p:outputLabel for="prenume" value="Prenume Student:" />
+                <p:inputText id="prenume" value="#{adminProgramariStudentBean.prenumeStudent}" />
+
+                <!-- Buton pentru a căuta programările studentului -->
+                <p:commandButton value="Vezi programările" action="#{adminProgramariStudentBean.cautaProgramari}" update="programariTable" ajax="true" />
+            </h:panelGrid>
+
+            <!-- Tabelul cu programările studentului -->
+            <p:dataTable id="programariTable" value="#{adminProgramariStudentBean.programari}" var="programare" border="1">
+                <p:column headerText="ID">
+                    <h:outputText value="#{programare.id}" />
+                </p:column>
+                <p:column headerText="Student">
+                    <h:outputText value="#{programare.student.nume}" />
+                </p:column>
+                <p:column headerText="Data Programării">
+                    <h:outputText value="#{programare.dataProgramare.toLocalDate()} #{programare.dataProgramare.toLocalTime()}" />
+                </p:column>
+                <p:column headerText="Status">
+                    <h:outputText value="#{programare.status}" />
+                </p:column>
+                <p:column headerText="Acțiuni">
+                    <p:commandButton value="Anulează"
+                                     action="#{adminProgramariStudentBean.anuleazaProgramare(programare)}"
+                                     update="programariTable"
+                                     ajax="true" />
+
+                    <!-- Buton pentru a seta programarea ca Expirată -->
+                    <p:commandButton value="Setează Expirată"
+                                     action="#{adminProgramariStudentBean.seteazaExpirata(programare)}"
+                                     update="programariTable"
+                                     ajax="true" />
+
+                    <!-- Buton pentru a activa programarea -->
+                    <p:commandButton value="Activează"
+                                     action="#{adminProgramariStudentBean.activeazaProgramare(programare)}"
+                                     update="programariTable"
+                                     ajax="true" />
+                </p:column>
+            </p:dataTable>
+
+
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

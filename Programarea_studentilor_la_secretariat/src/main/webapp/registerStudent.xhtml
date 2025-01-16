@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="template.xhtml">
+    <ui:define name="pageTitle">
+        Inregistrare Student
+    </ui:define>
+
+    <ui:define name="content">
+        <!-- Formular centrat pe pagina -->
+        <h:form id="studentForm">
+            <!-- Container pentru formular, adăugăm clasa de centru aliniere -->
+            <h:panelGrid columns="1" styleClass="form-container">
+
+                <!-- Nume -->
+                <p:outputLabel for="nume" value="Nume:" />
+                <p:inputText id="nume" value="#{inregistrareStudentBean.nume}" required="true" label="Nume" />
+
+                <!-- Prenume -->
+                <p:outputLabel for="prenume" value="Prenume:" />
+                <p:inputText id="prenume" value="#{inregistrareStudentBean.prenume}" required="true" label="Prenume" />
+
+                <!-- Username -->
+                <p:outputLabel for="username" value="Username:" />
+                <p:inputText id="username" value="#{inregistrareStudentBean.username}" required="true" label="Username" />
+
+                <!-- Parola -->
+                <p:outputLabel for="parola" value="Parola:" />
+                <p:password id="parola" value="#{inregistrareStudentBean.password}" required="true" label="Parola" />
+
+                <!-- Categorie Student -->
+                <p:outputLabel for="categorie" value="Categorie Student:" />
+                <p:selectOneMenu id="categorie" value="#{inregistrareStudentBean.categorie}">
+                    <f:selectItem itemValue="Licenta" itemLabel="Licență" />
+                    <f:selectItem itemValue="Master" itemLabel="Master" />
+                </p:selectOneMenu>
+
+                <!-- Specializare -->
+                <p:outputLabel for="specializare" value="Specializare:" />
+                <p:selectOneMenu id="specializare" value="#{inregistrareStudentBean.specializare}">
+                    <f:selectItem itemValue="Mate" itemLabel="Matematică" />
+                    <f:selectItem itemValue="MateInfo" itemLabel="Matematică-Informatică" />
+                </p:selectOneMenu>
+
+                <!-- An Studiu -->
+                <p:outputLabel for="anStudiu" value="An Studiu:" />
+                <p:selectOneMenu id="anStudiu" value="#{inregistrareStudentBean.anStudiu}">
+                    <f:selectItem itemValue="1" itemLabel="Anul 1" />
+                    <f:selectItem itemValue="2" itemLabel="Anul 2" />
+                    <f:selectItem itemValue="3" itemLabel="Anul 3" />
+                </p:selectOneMenu>
+
+                <!-- Buton de înregistrare -->
+                <p:commandButton value="Inregistreaza" action="#{inregistrareStudentBean.inregistreaza}" update="@form" styleClass="submit-button"/>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>
+
+<!-- CSS integrat direct în pagina XHTML -->
+<style>
+    /* Centrarea formularului pe pagina */
+    body, html {
+        height: 100%; /* Asigură că html și body ocupă toată înălțimea paginii */
+        margin: 0;
+        display: flex;
+        justify-content: center;  /* Centrarea formularului pe orizontală */
+        align-items: center;      /* Centrarea formularului pe verticală */
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;  /* Alinierea verticală a elementelor */
+        align-items: center;     /* Aliniere pe centru orizontal */
+        justify-content: center; /* Aliniere pe centru vertical */
+        width: 50%;              /* Setează lățimea formularului */
+        min-width: 300px;        /* Asigură că formularul nu devine prea îngust pe ecrane mici */
+        margin: 0 auto;          /* Centrarea orizontală */
+        padding: 20px;
+        background-color: #f9f9f9; /* Poți modifica culoarea fundalului */
+        border-radius: 8px;         /* Colțuri rotunjite pentru un aspect mai plăcut */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adaugă umbră ușoară pentru a face formularul mai vizibil */
+    }
+
+    /* Personalizare buton */
+    .submit-button {
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+    }
+
+    /* Stiluri pentru câmpuri și etichete */
+    .ui-outputlabel {
+        margin-top: 10px;
+    }
+
+    .ui-inputtext, .ui-selectonemenu, .ui-password {
+        width: 100%; /* Fiecare câmp va ocupa întreaga lățime disponibilă */
+        margin-bottom: 10px; /* Spațiu între câmpuri */
+    }
+
+    /* Stiluri pentru mesajele de validare */
+    .ui-message {
+        font-size: 0.9em;
+        color: red;
+    }
+
+    /* Stiluri pentru mesajele de eroare */
+    .ui-message-error {
+        color: red;
+    }
+
+</style>
+</html>

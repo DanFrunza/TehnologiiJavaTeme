@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="template.xhtml">
+    <ui:define name="pageTitle">
+        Inregistrare Student
+    </ui:define>
+
+    <ui:define name="content">
+        <!-- Formular centrat pe pagina -->
+        <h:form id="studentForm">
+            <!-- Container pentru formular, adăugăm clasa de centru aliniere -->
+            <h:panelGrid columns="1" styleClass="form-container">
+
+                <!-- Nume -->
+                <p:outputLabel for="nume" value="Nume:" />
+                <p:inputText id="nume" value="#{inregistrareAdminBean.nume}" required="true" label="Nume" />
+                <p:message for="nume" display="icon" />
+
+                <!-- Prenume -->
+                <p:outputLabel for="prenume" value="Prenume:" />
+                <p:inputText id="prenume" value="#{inregistrareAdminBean.prenume}" required="true" label="Prenume" />
+                <p:message for="prenume" display="icon" />
+
+                <!-- Username -->
+                <p:outputLabel for="username" value="Username:" />
+                <p:inputText id="username" value="#{inregistrareAdminBean.username}" required="true" label="Username" />
+                <p:message for="username" display="icon" />
+
+                <!-- Parola -->
+                <p:outputLabel for="password" value="Parola:" />
+                <p:password id="password" value="#{inregistrareAdminBean.password}" required="true" label="Parola" />
+                <p:message for="password" display="icon" />
+
+                <!-- Cod Admin -->
+                <p:outputLabel for="codAdmin" value="Cod Admin:" />
+                <p:inputText id="codAdmin" value="#{inregistrareAdminBean.codAdmin}" required="true" label="Cod Admin" />
+                <p:message for="codAdmin" display="icon" />
+
+                <!-- Buton de înregistrare -->
+                <p:commandButton value="Inregistreaza" action="#{inregistrareAdminBean.inregistreaza}" update="@form" />
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>
+
+<!-- CSS integrat direct în pagina XHTML -->
+<style>
+    /* Centrarea formularului pe pagina */
+    body, html {
+        height: 100%; /* Asigură că html și body ocupă toată înălțimea paginii */
+        margin: 0;
+        display: flex;
+        justify-content: center;  /* Centrarea formularului pe orizontală */
+        align-items: center;      /* Centrarea formularului pe verticală */
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;  /* Alinierea verticală a elementelor */
+        align-items: center;     /* Aliniere pe centru orizontal */
+        justify-content: center; /* Aliniere pe centru vertical */
+        width: 50%;              /* Setează lățimea formularului */
+        min-width: 300px;        /* Asigură că formularul nu devine prea îngust pe ecrane mici */
+        margin: 0 auto;          /* Centrarea orizontală */
+        padding: 20px;
+        background-color: #f9f9f9; /* Poți modifica culoarea fundalului */
+        border-radius: 8px;         /* Colțuri rotunjite pentru un aspect mai plăcut */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adaugă umbră ușoară pentru a face formularul mai vizibil */
+    }
+
+    /* Personalizare buton */
+    .submit-button {
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+    }
+
+    /* Stiluri pentru câmpuri și etichete */
+    .ui-outputlabel {
+        margin-top: 10px;
+    }
+
+    .ui-inputtext, .ui-selectonemenu, .ui-password {
+        width: 100%; /* Fiecare câmp va ocupa întreaga lățime disponibilă */
+        margin-bottom: 10px; /* Spațiu între câmpuri */
+    }
+
+    /* Stiluri pentru mesajele de validare */
+    .ui-message {
+        font-size: 0.9em;
+        color: red;
+    }
+
+    /* Stiluri pentru mesajele de eroare */
+    .ui-message-error {
+        color: red;
+    }
+
+</style>
+</html>
